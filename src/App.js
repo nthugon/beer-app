@@ -1,43 +1,13 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
+import Header from './components/Header';
+import Subheading from './components/Subheading';
+import Footer from './components/Footer';
+import Home from './components/Home';
+import Beers from './components/Beers';
+import About from './components/About';
 import PropTypes from 'prop-types';
 import './App.css';
-
-const Home = () => (
-  <div>
-    <h2> Home </h2>
-  </div>
-);
-
-const Beers = () => (
-  <div>
-    <h2> Beers </h2>
-  </div>
-);
-
-const About = () => (
-  <div>
-    <h2> About </h2>
-  </div>
-);
-
-function Header() {
-  return (
-    <div>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/beers">Beers</Link></li>
-        <li><Link to="/about">About</Link></li>        
-      </ul>
-    </div>
-  );
-}
-
-function Footer() {
-  return (
-    <div> Another awesome app by Nathan Hugon!</div>
-  );
-}
 
 class App extends Component {
   render() {
@@ -47,6 +17,7 @@ class App extends Component {
         <Route {...rest} render={matchProps => (
           <div className="DefaultLayout">
             <Header />
+            <Subheading />
             <Component {...matchProps} />
             <Footer />
           </div>
