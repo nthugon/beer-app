@@ -1,3 +1,10 @@
-.DefaultLayout {
-  font-size: 10px;
+.content {
+  position: absolute;
+  width: 100%;
+  top: 115px;
+  bottom: 50px;
+  overflow: auto; 
+  color: #fafafa;      
+  background-color: #d3d3d3;
+  background-size: 100%;
 }

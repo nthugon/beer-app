@@ -1,6 +1,7 @@
 footer {
   box-sizing: border-box;    
   text-align: center;
+  padding: 10px 0 0;
   color: #fafafa;
   background: #005778;
   font-size: 1.6rem;
@@ -28,11 +29,12 @@ footer {
 }
 
 .nav-link li {
+  padding: 5px 0 0;
   font-size: 1.0rem;
 }
 
 .footer-icon {
-  font-size: 1.4rem;
+  font-size: 2.0rem;
 }
 
 

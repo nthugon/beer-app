@@ -15,10 +15,12 @@ class App extends Component {
     const DefaultLayout = ({component: Component, ...rest}) => {
       return (
         <Route {...rest} render={matchProps => (
-          <div className="DefaultLayout">
+          <div className="default-layout">
             <Header />
             <Subheading />
-            <Component {...matchProps} />
+            <div className="content">
+              <Component {...matchProps} />
+            </div>
             <Footer />
           </div>
         )} />
