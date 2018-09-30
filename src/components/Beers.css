@@ -1,12 +1,17 @@
 .content-heading {
   margin: 10px auto 0;    
   font-size: 1.6rem;
+  font-weight: bold;
   text-align: center;
   color: #090909;;
   width: 75%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.error {
+  color: #f52028;
 }
 
 .beer-listing {
