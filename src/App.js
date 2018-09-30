@@ -16,7 +16,7 @@ class App extends Component {
         <Route {...rest} render={matchProps => (
           <div className="default-layout">
             <Header />
-            <Subheading />
+            <Subheading subheading={rest.subheading} />
             <div className="content">
               <Component {...matchProps} />
             </div>
@@ -28,9 +28,9 @@ class App extends Component {
 
     return (
       <div>
-        <DefaultLayout path="/" exact component={Home} />
-        <DefaultLayout path="/beers" exact component={Beers} />
-        <DefaultLayout path="/about" component={About} />
+        <DefaultLayout path="/" exact component={Home} subheading="Home"/>
+        <DefaultLayout path="/beers" exact component={Beers} subheading="Beers" />
+        <DefaultLayout path="/about" component={About} subheading="About"/>
       </div>
     );
   }
