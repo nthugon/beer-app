@@ -1,41 +1,26 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Beer.css';
 
-// function ReactDefault({ match }) {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <h1 className="App-title">Welcome to React</h1>
-//         <h2>Welcome, {match.params.username}</h2>
-//       </header>
-//       <p className="App-intro">
-//         To get started, edit <code>src/App.js</code> and save to reload.
-//       </p>
-//     </div>
-//   );
-// }
-
 class Beer extends Component {
-  constructor(matchProps) {
-    super(matchProps);
+  constructor(props) {
+    super(props);
     this.state = {
-      id: matchProps.match.params.id,
       error: null,
       isLoaded: false,
-      reviews: [],
+      beer: null,
     };
   }
 
   async componentDidMount() {
     try {
-      console.log("this.state.id: ", this.state.id);
-      const response = await fetch(`https://brj-server.herokuapp.com/api/beers/${this.state.id}`);
+      const id = this.props.match.params.id;
+      const response = await fetch(`https://brj-server.herokuapp.com/api/beers/${id}`);
       const json = await response.json();
       if (response.ok) {        
         this.setState({
           isLoaded: true,
-          reviews: json.reviews
+          beer: json
         });
       } else {
         this.setState({
@@ -52,7 +37,7 @@ class Beer extends Component {
   }
 
   render() {
-    const { error, isLoaded, reviews } = this.state;
+    const { error, isLoaded, beer } = this.state;
     if (error) {
       return <div className="content-heading error">Error: {error}</div>;
     } else if (!isLoaded) {
@@ -60,22 +45,35 @@ class Beer extends Component {
     } else {
       return (
         <div>
-          <h2>Welcome, {this.state.id}</h2>
-          {reviews.map(review => (
-            <div key={review._id}>
-              <div title="{review.comments}" className="detail-line">
-                {review.comments} 
+          <div className="review-heading">
+            <h2 title="{beer.brewery}">{beer.brewery}</h2>
+            <h3 title="{beer.name}">{beer.name}</h3>
+            <p>{beer.reviews.length > 0 ? "has the following reviews:" : "does not yet have any reviews."}</p>
+          </div>
+          {beer.reviews.map(review => (
+            <div className="review-listing" key={review._id}>
+              <div className="comment" >{
+              // eslint-disable-next-line react/no-unescaped-entities              
+              }"{review.comments.length > 0 ? review.comments : "No comment."}" -{review.reviewer}
+              </div>
+              <div className="detail-line capitalize">
+                  Drink Again?: {review.drinkAgain}
               </div>
             </div>
-
-
           ))}
-
         </div>
-
       );
     }
   }
 }
+
+Beer.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.node,
+    }).isRequired,
+  }).isRequired
+};
+
 
 export default Beer;

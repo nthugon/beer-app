@@ -66,14 +66,15 @@ class Beers extends Component {
     if (error) {
       return <div className="content-heading error">Error: {error}</div>;
     } else if (!isLoaded) {
-      return <div className="content-heading">Loading...</div>;
+      // return <div className="content-heading">Loading...</div>;
+      return <div className="loader"></div>;
     } else {
       return (
         <div>
           <h3 className="content-heading">Select a Beer to See Reviews</h3>
           <div>
             {beers.map(beer => (
-              <Link key={beer.name} to={`/beers/${beer._id}`}>
+              <Link className="beer-link" key={beer.name} to={`/beers/${beer._id}`}>
                 <div className="beer-listing">
                   <div title="{beer.brewery}" className="detail-line">
                     {beer.brewery} 

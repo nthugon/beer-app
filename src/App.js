@@ -31,7 +31,7 @@ class App extends Component {
       <div>
         <DefaultLayout path="/" exact component={Home} subheading="Home"/>
         <DefaultLayout path="/beers" exact component={Beers} subheading="Beers" />
-        <DefaultLayout path="/beers/:id" component={Beer} />
+        <DefaultLayout path="/beers/:id" component={Beer} subheading="Reviews"/>
         <DefaultLayout path="/about" component={About} subheading="About"/>
       </div>
     );
