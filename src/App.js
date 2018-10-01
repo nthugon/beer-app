@@ -5,6 +5,7 @@ import Subheading from './components/Subheading';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Beers from './components/Beers';
+import Beer from './components/Beer';
 import About from './components/About';
 import './App.css';
 
@@ -30,6 +31,7 @@ class App extends Component {
       <div>
         <DefaultLayout path="/" exact component={Home} subheading="Home"/>
         <DefaultLayout path="/beers" exact component={Beers} subheading="Beers" />
+        <DefaultLayout path="/beers/:id" component={Beer} />
         <DefaultLayout path="/about" component={About} subheading="About"/>
       </div>
     );

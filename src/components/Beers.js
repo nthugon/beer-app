@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Beers.css';
 
 class Beers extends Component {
@@ -72,17 +73,19 @@ class Beers extends Component {
           <h3 className="content-heading">Select a Beer to See Reviews</h3>
           <div>
             {beers.map(beer => (
-              <div className="beer-listing" key={beer.name}>
-                <div title="{beer.brewery}" className="detail-line">
-                  {beer.brewery} 
+              <Link key={beer.name} to={`/beers/${beer._id}`}>
+                <div className="beer-listing">
+                  <div title="{beer.brewery}" className="detail-line">
+                    {beer.brewery} 
+                  </div>
+                  <div title="{beer.name}" className="title-line">
+                    {beer.name} 
+                  </div>
+                  <div className="detail-line">
+                    {beer.style} {beer.abv}<span>{beer.abv ? "% abv" : ""}</span>
+                  </div>
                 </div>
-                <div title="{beer.name}" className="title-line">
-                  {beer.name} 
-                </div>
-                <div className="detail-line">
-                  {beer.style} {beer.abv}<span>{beer.abv ? "% abv" : ""}</span>
-                </div>
-              </div>
+              </Link>
             ))}        
           </div>
         </div>
