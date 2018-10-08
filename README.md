@@ -1,3 +1,3 @@
 #beer-app
 
-This is a rewrite in React of Beer Reviewed Journal. 
+This is a rewrite in React of Hop Hub. 
