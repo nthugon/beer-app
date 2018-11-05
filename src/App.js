@@ -17,7 +17,7 @@ class App extends Component {
         <Route {...rest} render={matchProps => (
           <div className="default-layout">
             <Header />
-            <Subheading subheading={rest.subheading} />
+            <Subheading subheading={rest.subheading} link={rest.link}/>
             <div className="content">
               <Component {...matchProps} />
             </div>
@@ -29,10 +29,10 @@ class App extends Component {
 
     return (
       <div>
-        <DefaultLayout path="/" exact component={Home} subheading="Home"/>
-        <DefaultLayout path="/beers" exact component={Beers} subheading="Beers" />
-        <DefaultLayout path="/beers/:id" component={Beer} subheading="Reviews"/>
-        <DefaultLayout path="/about" component={About} subheading="About"/>
+        <DefaultLayout path="/" exact component={Home} subheading="Home" link="Beers"/>
+        <DefaultLayout path="/beers" exact component={Beers} subheading="Beers" link="Home" />
+        <DefaultLayout path="/beers/:id" component={Beer} subheading="Reviews" link="Beers"/>
+        <DefaultLayout path="/about" component={About} subheading="About" link="Beers"/>
       </div>
     );
   }
