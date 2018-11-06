@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import './Beer.css';
 
 class Beer extends Component {
@@ -44,7 +47,10 @@ class Beer extends Component {
       return <div className="content-heading">Loading...</div>;
     } else {
       return (
-        <div>
+        <div className="beer-reviews">
+          <Link to="/beers">
+            <FontAwesomeIcon className="close-x" icon={faTimes} />          
+          </Link>          
           <div className="review-heading">
             <h2 title="{beer.brewery}">{beer.brewery}</h2>
             <h3 title="{beer.name}">{beer.name}</h3>
@@ -61,6 +67,9 @@ class Beer extends Component {
               </div>
             </div>
           ))}
+          <Link to="/beers">
+            <button className="back-btn">Back to Beers</button>         
+          </Link>          
         </div>
       );
     }
