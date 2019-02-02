@@ -1,5 +1,5 @@
 .hero {
-  background: url('/beer-app/img/beer-pint.png') no-repeat center -15px;
+  background: url('/img/beer-pint.png') no-repeat center -15px;
   background-size: cover;
   min-height: 600px;       
 }
