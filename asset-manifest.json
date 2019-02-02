@@ -1,6 +1,13 @@
 {
-  "main.css": "static/css/main.b0e84b3c.css",
-  "main.css.map": "static/css/main.b0e84b3c.css.map",
-  "main.js": "static/js/main.7510c22a.js",
-  "main.js.map": "static/js/main.7510c22a.js.map"
+  "main.css": "/beer-app/static/css/main.5d6f131d.chunk.css",
+  "main.js": "/beer-app/static/js/main.56d5c2c0.chunk.js",
+  "main.js.map": "/beer-app/static/js/main.56d5c2c0.chunk.js.map",
+  "static/js/1.11aab18a.chunk.js": "/beer-app/static/js/1.11aab18a.chunk.js",
+  "static/js/1.11aab18a.chunk.js.map": "/beer-app/static/js/1.11aab18a.chunk.js.map",
+  "runtime~main.js": "/beer-app/static/js/runtime~main.cf59efaf.js",
+  "runtime~main.js.map": "/beer-app/static/js/runtime~main.cf59efaf.js.map",
+  "static/css/main.5d6f131d.chunk.css.map": "/beer-app/static/css/main.5d6f131d.chunk.css.map",
+  "index.html": "/beer-app/index.html",
+  "precache-manifest.ac5091769b9ba82cc72cc0cc5928224a.js": "/beer-app/precache-manifest.ac5091769b9ba82cc72cc0cc5928224a.js",
+  "service-worker.js": "/beer-app/service-worker.js"
 }
